@@ -17,114 +17,74 @@
 					?>
 					<h1><?php print $title; ?></h1>
 
-					<div class="container-abas">
-				    	<div class="abas categoria">
-							    <ul class="nav nav-tabs">
-							      <li class="active sobre"><a href="#sobre" data-toggle="tab">Sobre o Evento</a></li>
-							      <!--li class="todas"><a href="#publicacoes" data-toggle="tab">Todos os Posts</a></li-->
-							      <li class="excursoes"><a href="#excursoes" data-toggle="tab">Excursões</a></li>
-							      <li class="venda-ingresso"><a href="#venda-ingresso" data-toggle="tab">Revenda de Ingressos</a></li>
-							      <li class="procura-carona"><a href="#procura-carona" data-toggle="tab">Caronas</a></li>
-							    </ul>
-						</div>
-					</div>
+					<div class="info-data">
+						<?php print views_embed_view('festival_data', 'block_1', $nid); ?>	
+					</div>	
+
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container">
+<div class="container">
 
 		<div class="row">
 
 			<div class="col-md-8">
 				
-				<div class="conteudo">
+				<div class="conteudo">			
 
-					<?php //print views_embed_view('festival_sobre', 'default', $nid); ?>
+					<div class="tab-content">
 
+						<div class="tab-pane active" id="sobre">
+				      			<div class="container-form">
+				      				<?php print views_embed_view('festival_sobre', 'default', $nid); ?>
+				      			</div>			      				
+
+				      			<div class="info-mapa">
+									<?php print views_embed_view('festival_data', 'attachment_1', $nid); ?>	
+								</div>
+								
+					      </div>
+
+					</div>
+
+				</div>				
+			</div>
+
+		<div class="col-md-4">
+
+			<div class="banner-1">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- Festivais - Sidebar -->
+				<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-7864415239368120"
+				     data-ad-slot="6413474152"
+				     data-ad-format="auto"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+
+			<div class="banner-2">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- Festivais Sidebar 2 -->
+					<ins class="adsbygoogle"
+					     style="display:block"
+					     data-ad-client="ca-pub-7864415239368120"
+					     data-ad-slot="4465967667"
+					     data-ad-format="auto"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+			</div>
 			
-
-			<div class="tab-content">
-
-					<div class="tab-pane active" id="sobre">
-			      			<div class="container-form">
-			      				<?php print views_embed_view('festival_sobre', 'default', $nid); ?>
-			      			</div>
-				      </div>							 
-
-					<!--div class="tab-pane" id="publicacoes">
-			      			<div class="container-form">
-			      				<?php print views_embed_view('publicacoes_recentes_festival2', 'default'); ?>
-			      			</div>
-				      </div-->				      
-
-				      <div class="tab-pane" id="excursoes">
-				      		<?php print views_embed_view('oferecendo_excursao', 'default', $nid); ?>
-
-					      	<div class="card send-post">
-					      		<h3>Você está organizando uma excursão para esse festival? Divulgue agora mesmo!</h3>
-					      		<?php if($user->uid){ ?>
-					      			<div class="container-form form-excursoes">
-					      				
-					      			</div>
-					      		<?php } else { ?>
-									<div class="aviso"><a href="http://partiufestival.com/user/register">Crie uma conta</a> ou <a href="http://partiufestival.com/user">faça login</a> para interagir com o público do Partiu Festival.</div>
-								<?php } ?>									
-							</div>
-							
-				      </div>
-
-				      <div class="tab-pane" id="venda-ingresso">
-				      		<?php print views_embed_view('vendendo_ingresso2', 'default', $nid); ?>
-					      	
-					      	<div class="card send-post">
-					      		<h3>Você tem ingressos para esse festival? Então publique o seu anúncio e venda já!</h3>
-					      		<?php if($user->uid){ ?>
-				      			<div class="container-form form-venda">
-				      				
-				      			</div>	
-				      			<?php } else { ?>
-									<div class="aviso"><a href="http://partiufestival.com/user/register">Crie uma conta</a> ou <a href="http://partiufestival.com/user">faça login</a> para interagir com o público do Partiu Festival.</div>
-								<?php } ?>								
-							</div>
-							
-				      </div>
-
-				      <div class="tab-pane" id="procura-carona">
-				      		<?php print views_embed_view('oferecendo_carona2', 'default', $nid); ?>
-
-					      	<div class="card send-post">
-					      		<h3>Procurando carona para esse festival? Deixe aqui sua mensagem!</h3>
-					      		<?php if($user->uid){ ?>
-				      			<div class="container-form form-procura-carona">
-				      				
-				      			</div>
-				      			<?php } else { ?>
-									<div class="aviso"><a href="http://partiufestival.com/user/register">Crie uma conta</a> ou <a href="http://partiufestival.com/user">faça login</a> para interagir com o público do Partiu Festival.</div>
-								<?php } ?>								
-							</div>							
-				      </div>
-      
-
-			  </div>
-
-		</div>				
-	</div>
-
-	<div class="col-md-4">
-		<div class="info-mapa">
-			<?php print views_embed_view('festival_data', 'attachment_1', $nid); ?>	
 		</div>
-		<div class="info-data">
-			<?php print views_embed_view('festival_data', 'block_1', $nid); ?>	
-		</div>		
-		
-	</div>
 
-	</div>
+	</div><!-- row -->
 
-	</div>
+</div><!-- container -->
 
 		
 

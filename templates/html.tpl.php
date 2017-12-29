@@ -4,21 +4,19 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="msvalidate.01" content="C7AAE1A27DEE2C221341D9FF7CADD7B3" />
-
 
   <?php if($is_front) : ?>
  
         <meta name="distribution" content="Global" />
         <meta name="robots" content="all" />
         <meta name="language" content="pt-br" />
-        <meta name="title" content="Partiu Festival!" />
-        <meta name="description" content="Encontre excursões, ingressos, caronas e promoções para o seu próximo festival!" />
+        <meta name="title" content="Psicodelia - Festivais" />
+        <meta name="description" content="Encontre festivais de psytrance perto de você!" />
         <meta name="keywords" content="rave, rave música eletrônica, música eletrônica, festival música, festival música eletrônica, rave Brasil, festa música eletrônica" />
-        <link rel="image_src" href="http://partiufestival.com/sites/all/themes/partiucadastro/img/partiu-festival.jpg" />
-        <meta property="og:title" content="Partiu Festival"/>
-        <meta property="og:description" content="Encontre excursões, ingressos, caronas e promoções para o seu próximo festival!"/>
-        <meta property="og:image" content="http://partiufestival.com/sites/all/themes/partiucadastro/img/partiu-festival.jpg"/>    
+        <link rel="image_src" href="https://psicodelia.org/sites/all/themes/festivais18/img/festivais.jpg" />
+        <meta property="og:title" content="Psicodelia Festivais"/>
+        <meta property="og:description" content="Encontre festivais de psytrance perto de você!"/>
+        <meta property="og:image" content="https://psicodelia.org/sites/all/themes/festivais18/img/festivais.jpg"/>    
         <meta property="og:type" content="website" /> 
         <link rel="shortcut icon" href="imgs/favicon.png">
   
@@ -33,7 +31,7 @@
     <?php print $scripts; ?>  
     <!-- Custom Fonts -->
   
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
 
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

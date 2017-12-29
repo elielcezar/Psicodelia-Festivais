@@ -7,14 +7,15 @@ core = 7.x
 
 base theme = bootstrap
 
-stylesheets[all][] = css/geral.css
-stylesheets[all][] = css/max-767.css
-
-
 regions[header] = Header
 regions[extras] = Extras
 regions[content] = Content
 regions[footer] = Footer
+
+stylesheets[all][] = css/geral.css
+stylesheets[all][] = css/max-767.css
+
+scripts[] = js/geral.js
 
 version = "7.12"
 project = "drupal"

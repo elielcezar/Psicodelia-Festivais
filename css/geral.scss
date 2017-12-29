@@ -1,19 +1,17 @@
 
 $preto: #222;
-$vermelho: #be0038;
+$vermelho: #de0035;
 $vermelho-escuro: #830429;
 $cinza-claro: #efedee;
 
 
-
 @mixin gradiente-1{
-    background: -webkit-linear-gradient(left top, #ea4830, #FF6666);
-    background: -o-linear-gradient(bottom right, #ea4830, #FF6666);
-    background: -moz-linear-gradient(bottom right, #ea4830, #FF6666);
-    background: linear-gradient(to bottom right, #ea4830, #FF6666);
+    background: -webkit-linear-gradient(left top, #de0035, #830429);
+    background: -o-linear-gradient(bottom right, #de0035, #830429);
+    background: -moz-linear-gradient(bottom right, #de0035, #830429);
+    background: linear-gradient(to bottom right, #de0035, #830429);
 }
     
-
 body,
 html {
     width: 100%;
@@ -23,7 +21,7 @@ html {
 body{
     background: #fff;
     color: $preto;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -35,7 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Open Sans', Helvetica,Arial,sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 
@@ -192,6 +190,7 @@ form input[type="submit"]{
 button:hover,
 button.btn:hover,
 a.btn:hover,
+a.btn:active,
 button:active,
 button:active,
 button:focus,
@@ -214,8 +213,7 @@ form input[type="submit"]:hover{
 /*--- TOPO -----------------------------------------------------------------------*/
 
 header{
-    background: $preto;
-    //@include gradiente-1;
+    background: $preto;    
     text-align: center;
     position: relative;
     overflow: visible;
@@ -256,13 +254,33 @@ header{
 
     .logo{
         width: 232px;        
-        height: 110px;
+        height: 100px;
         margin: 0;
         float: left;
-        /*@media(max-width:767px){
-            width: 100%;
-        }*/
     } 
+
+
+    /* redes sociais */
+    .redes-sociais{
+        float: left;
+        width: 300px;
+        position: relative;
+        top: 35px;
+        left: 35px;
+
+        a{
+            display: block;
+            margin-right: 20px;
+            border-radius: 50px;
+            font-size: 24px;
+            text-align: center;
+            float: left;
+            color: #777;
+            transition: all .3s;
+
+            &:hover{color: #fff;}
+        }
+    }  
 
     
     /* busca*/
@@ -270,33 +288,39 @@ header{
         width: 550px;
         margin: 0;
         position: absolute;
-        right: 0;
-        top: 25px;
-       /* position: absolute;
-        left: 50%;
-        margin-left: -300px;*/
-        /*width: 36%;
-        margin: 12px 0 15px 25px;
-        float: left;*/
+        right: 2.5%;
+        top: 21px;
+
+        @media(max-width:767px){
+            width: 100%;
+            margin: 20px 0 10px 0;
+        }
+        @media(min-width:768px)and(max-width:1299px){
+            width: 40%;
+            margin-bottom: 0;
+            margin-right: 0;
+        } 
+
+        form{
+            display: block;
+            position: absolute;
+            width: 85%;
+        }       
 
         label{display: none;}         
 
         #edit-combine-wrapper{
-            width: 90%;
+            width: 99.5%;
             position: absolute;
             top: 0;
             left: 0;
         }
         #edit-combine{
             height: 45px;            
-            //font-style: italic; 
             font-weight: normal;
-            font-size: 16px;
-            /*border-top-right-radius: 0;
-            border-bottom-right-radius: 0;  */   
-            border: none;  
-
-            padding: 10px 0 0 10px 8px;    
+            font-size: 16px; 
+            border: none;
+            padding: 10px 0 10px 20px;    
         }        
 
         #edit-field-data-value-wrapper,
@@ -311,20 +335,12 @@ header{
             top: 0;
 
             button{                
-                //margin: 0 0 0 -50%;
                 width: 100%;
                 height: 45px;
                 padding: 8px 0;
                 float: left;
                 margin-top: 0;
-
-                /*color: $vermelho;
-                background: #fff; */
                 border-bottom-color: $vermelho;
-                //font-size: 16px;
-                /*border-top-left-radius: 0;
-                border-bottom-left-radius: 0;*/   
-
                 @media(max-width:767px){
                     width: 100%;
                 }
@@ -335,116 +351,48 @@ header{
         }
         .views-widget-sort-by{display: none;} 
 
-        @media(max-width:767px){
-            width: 100%;
-            margin: 20px 0 10px 0;
-        }
-        @media(min-width:768px)and(max-width:1299px){
-            width: 40%;
-            margin-bottom: 0;
-            margin-right: 0;
-        } 
-         
+        .todos{
+            position: absolute;
+            right: 0;
+            top: 21px;
+            display: block;
+            color: #fff;
+            text-transform: uppercase;
+        }         
 
     } /* busca */
 
-    ul.menu-principal{
-        float: right;
-        text-align: right;
-        margin: 40px 0 0 0;
-
-        display: none;
-
-        li{
-            float: left;
-            display: inline-block;
-            margin: 0 15px 0 0;
-
-            a{
-                color: #fff;
-
-                &:hover{
-                    background: $vermelho;
-                    color: #fff;
-                }
-                @media(max-width:1299px){
-                    padding: 10px 40px;
-                }
-                @media(max-width:767px){
-                    padding: 10px;
-                    width: 100%;
-                }
-            }
-            @media(max-width:1299px){
-                float: none;
-            }
-            @media(max-width:767px){
-                width: 100%;
-            }
-        }
-        @media(max-width:1299px){
-            width: 100%;
-            text-align: center;
-            margin: 10px 0;
-            background: $preto;
-        } 
-        @media(max-width:767px){
-            display: none;
-        }
-
-    }/* - menu principal */ 
-
-    
-    .cadastrese{
-        float: right;
-        margin: 18px 0 0 5px;
-        font-size: 12px;
-        text-transform: uppercase;
-
-        a{font-weight: normal;}    
-
-        .login{                     
-            padding: 12px 10px;
-            margin-top: 0;
-            background: transparent;
-            color: #fff;
-            border: none;
-
-            &:hover{
-                background: $vermelho;
-                color: #fff;
-                text-decoration: underline; 
-            }
-        }
-        .cadastro{           
-            padding: 12px;
-            border-radius: 5px;
-            color: #fff;
-            margin-top: 0;
-            color: #fff;
-            border: 1px solid #fff;
-
-            &:hover{
-                background: $vermelho;
-                color: #fff;
-                text-decoration: none;
-            }
-        }
-        @media(max-width:767px){
-            display: none;
-        }
-    }/* cadastrese */   
-
     .menu-usuario{
         height: 60px;
+        width: 120px;
         min-width: 45px;
-        margin: 25px 0 0 -15px;
+        margin: 20px 0 0 -15px;
         border-radius: 4px;
         position: relative;
         float: left;
         background: #fff;
         border-radius: 0;
-        box-shadow: -7px 0px 0px #f5f5f5;
+        box-shadow: -4px 0px 7px rgba(0,0,0,0.1);
+        transition: all .2s;
+
+        &:hover{
+            width: 205px;
+            transition: all .2s;
+        }
+
+        &:after{
+            content: '';
+            display: block;
+            width: 0px;
+            height: 0px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #999;
+            transform: rotate(-45deg);
+            top: 53px;
+            position: absolute;
+            left: 7px;
+        }
 
         p{
             float: left;
@@ -587,6 +535,7 @@ header{
       border-radius: 0;
       font-size: 14px;
       text-indent: 0;
+      z-index: 50;
       box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 
       li{
@@ -641,131 +590,85 @@ header{
         .cta{
             position: absolute;
             right: 4%;
-            top: 10%;
+            top: 8%;
             width: 25%;
             color: #fff;
             padding: 30px 40px;
             background: rgba(0,0,0,0.85);
             min-width: 470px;
 
+            h4{
+                padding: 15px 0 15px 40px;
+                color: #ccc;
+                background: transparent url(../img/local-icon.png) left center no-repeat;
+            }
+
             h2{
                 font-size: 42px;
                 line-height: 52px;
+                font-weight: 500;
             }
 
-            #edit-combine-wrapper{
-                width: 84%;
-                margin: 25px 0;
-                
-                label{display: none;}
-                input{
-                    width: 100%;
-                    height: 45px;
-                }
-            }
-            
-            .views-widget-sort-by{display: none;}
+            .place-busca{
+                position: relative;
+                height: 45px;
+                margin: 30px 0;
 
-            .views-submit-button{
-                width: 30%;
-                float: left;
-                margin: 25px 0;
-                padding: 0;
-                margin-left: -14%;
-
-                button{
+                #edit-combine-wrapper{
+                    width: 99%;
                     margin: 0;
-                    width: 100%;
-                    height: 45px;
-                    padding: 9px 0;
+                    position: absolute;
+                    padding: 0;
+                    top: 0;
+                    left: 0;
+                    
+                    label{display: none;}
+                    input{
+                        width: 100%;
+                        height: 45px;
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
                 }
+                            
+                .views-widget-sort-by{display: none;}
+
+                .views-submit-button{
+                    width: 30%;
+                    padding: 0;
+                    position: absolute;
+                    right: 0;
+                    top:0;
+
+                    button{
+                        margin: 0;
+                        width: 100%;
+                        height: 45px;
+                        padding: 9px 0;
+                    }
+                }
+
+                .todos{display: none;}
             }
 
-            p{
+
+
+            p a{
                 display: inline-block;
-                padding: 15px 40px 15px 0;
+                padding: 15px 40px 15px 5px;
+                color: #fff;
                 background: transparent url(../img/go.png) right center no-repeat;
             }
 
-            a{color: #fff;}
-        }       
+        }  
+
+        .getlocations_map_links{display: none;} 
+
+        .gm-style-iw{
+            h4, a{font-weight: 700;}
+        }    
     }
-    //background: #fff;
-    /*h2{
-        font-weight: 800;
-        letter-spacing: -1px;
-    }*/
-
-    /*.container-banner{
-        position: relative;
-        float: left;
-        width: 100%;
-
-        .slick-prev,
-           .slick-next{
-              position: absolute;
-              display: inline-block;
-              top: 50%;              
-              width: 25px;
-              text-indent: -5000em;
-              border: none;
-              height: 50px;
-              margin-top: -12px;
-          }
-          .slick-prev{
-            left: 0;
-            background: url(../img/slick-left.jpg) no-repeat center center;
-          }
-          .slick-next{
-            right: 0;
-            background: url(../img/slick-right.jpg) no-repeat center center;
-          }
-
-          @media(max-width:767px){
-            display: none;
-          }
-    } */   
-
-    /*.topnav {
-        font-size: 14px; 
-    }
-    .lead {
-        font-size: 18px;
-        font-weight: 400;
-    }*/
-    /*#excursao{
-        float: left;
-        width: 100%;
-    }
-    #publico{
-        float: left;
-        width: 100%;
-    }*/
-    /*.publicacoes-recentes{
-        float: left;
-        width: 100%;
-        background: #f5f5f5;
-
-        .views-row{
-            background: #fff;
-            border-radius: 2px;
-            margin: 1%;
-            width: 31%;
-            padding: 2% 2% 0 2%;
-            box-shadow: 3px 3px 3px #eee;
-        }
-
-         h2{
-            text-align: center;
-            margin: 50px 0;
-        }
-        .row{
-            min-height: 150px;
-
-            .chamada{font-style: italic;}
-            .nome{font-weight: bold;}
-        }
-    }*/
+    
 
      .proximos-festivais{
         float: left;
@@ -803,336 +706,85 @@ header{
         }
       }     
 
-    /*@media(max-width: 1285px){
-        .busca #edit-combine-wrapper{width: 57%;}
-    }
-    @media(max-width: 990px){
-        .busca #edit-combine-wrapper{width: 51%;}
-    }
-    @media(max-width: 767px){
-            .busca{
-                h2{margin-top: 20px;}
-                #edit-combine-wrapper,
-                #edit-field-data-value-wrapper{
-                    width: 100%; 
-                    padding: 0;
-                    margin-bottom: 10px;
-                }
-                span.ou{display: none;}
-            }
-            section.conteudo{float: left; width: 100%;}
-
-            .view-festivais{
-                #edit-sort-bef-combine-wrapper,
-                .views-row{float: left;}
-            }
-    }
-
-    @media(max-width: 468px){
-        #excursao img{margin-top: 25px;}
-        #publico img{margin-top: 25px;}
-    }*/
-
-}
-
-
-/* mapa */
-.mapa-festivais{
-    float: left;
-    width: 100%;
-    background: #fff;
-    position: relative;   
-}
-
-.getlocations_map_links{display: none;} 
-.getlocations_map_wrapper_inner{position: relative;}
-#edit-title-wrapper label{display: none;}
-
-.view-mapa-festivais2{
-
-        .getlocations_map_wrapper_inner{
-            h4{
-                font-size: 21px; 
-                font-weight: 800;
-                letter-spacing: -1px;
-            }
-            a{font-weight: 800;}
-        }
-
-        @media (min-width: 768px){
-            .front .views-exposed-form{
-               width: 500px;
-                background: #fff;
-                padding: 0 10px;
-                box-shadow: 0 5px 20px #999;
-                position: absolute;
-                top: 480px;
-                left: 50%;  
-                margin-left: -250px;
-                z-index: 50;    
-            }
-            .view-mapa-festivais label{ margin: 17px 0 0 10px; }
-                .view-mapa-festivais #edit-title-wrapper{
-                    float: left;
-                    width: 70%;
-                }
-                .view-mapa-festivais .views-submit-button{
-                    float: right;
-                    width: 29%;
-                    margin-top: 0;           
-                }
-                .view-mapa-festivais #edit-submit-mapa-festivais{margin-top: 0;} 
-                .view-mapa-festivais input[type="submit"] {
-                    text-align: center;
-                    color: #ffffff;
-                    background-color: #ff851b;
-                    border-color: #f36619;
-                    display: inline-block;
-                    margin-bottom: 0;
-                    font-weight: normal;
-                    text-align: center;
-                    vertical-align: middle;
-                    -ms-touch-action: manipulation;
-                    touch-action: manipulation;
-                    cursor: pointer;
-                    background-image: none;
-                    border: 1px solid transparent;
-                    white-space: nowrap;
-                    font-size: 16px;
-                    line-height: 1.42857143;
-                    border-radius: 4px;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                    padding: 6px 12px;
-                    border-width: 0 1px 4px 1px;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    border-bottom: 2px solid #f36619;
-                    transition: all .3s;
-                }       
-        }
-}
-
-.content-section-a {
-    padding: 50px 0;
-    background: #fff;
-}
-.content-section-b {
-    padding: 50px 0;
-    border-top: 1px solid #e7e7e7;
-    border-bottom: 1px solid #e7e7e7;
-    background: #fff;
-}
-.btn.chamada{
-    padding: 10px 30px;
-    font-size: 15px;
-}
-.section-heading {
-    margin-bottom: 30px;
-}
-.section-heading-spacer {
-    float: left;
-    width: 200px;
-    border-top: 3px solid #e7e7e7;
-}
-.banner {
-    padding: 100px 0;
-    color: #f8f8f8;
-    background: url(../img/bg9.jpg) no-repeat bottom center;
-    background-size: 100%;
-
-    h2 {
-        margin: 10px 0 0 0;
-        color: #fff;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
-    .form-item{margin-top: 0;}
-    .form-item:nth-child(1){
-        width: 38%;
-        float: left;
-    }
-    .form-item:nth-child(2){
-        width: 38%;
-        float: left;
-        margin-left: 1.5%;
-        margin-right: 1.5%;
-    }
-    #edit-actions{
-        width: 16%;
-        float: left;
-    }
-    #edit-actions input{width: 100%;}
-    .banner-social-buttons {
-        float: right;
-        margin-top: 0;
-    }
-}
-
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
-}
-@media(max-width:767px) {
-    .banner h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
-    ul.banner-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
 }
 
 /*--- TODOS OS FESTIVAIS ------------------------------------------------------------------*/
 
-.page-festivais{
+.page-todos{
+
+    .getlocations_map_links{display: none;}
+
+    .mapa-festivais{
+        width: 100%;
+        float: left;
+
+        .gm-style-iw{
+            h4, a{font-weight: 700;}
+        } 
+    }
+
 
     #principal{
         float: left;
         width: 100%;
-        margin: 0 0 50px 0;
+        margin-top: 0;
         min-height: 800px;
 
-        @media(max-width:1300px){
-            margin-top: 110px;
-        }
-        @media(min-width:1301px){
-            margin-top: 60px;
-        }
-
         .container{width: 90%;}
-    }
 
-    /*.busca{
-        width: 100%;
-        height: 240px;
-        padding: 45px 0 5px 0;
-        float: left;
-        margin: 0 0 40px 0;        
-        background: url(../img/bg-home.jpg);
-        border-bottom: 3px solid #ccc;
-        position: relative;
-
-        #edit-sort-bef-combine-wrapper{display: none;}
-
-        .views-exposed-widgets{
-            margin: 40px 0;
-            padding: 15px 20px 20px 20px;
-            background: rgba(0,0,0,0.7)
-        }
-        h2{
-            color: #fff;
+         h1{
             text-align: center;
-            margin-top: 0;
-        }
-        label{display: none;}
+            margin: 20px 0 50px 0;
+            font-size: 30px;
+            color: #333;
 
-        .help-block{display: none;}
-
-        span.ou{
-            float: left;
-            display: block;            
-            color: #fff;
-            margin: 15px 15px 0 0;
-        }        
-
-        #edit-combine-wrapper{
-            width: 60%;
-            float: left;
+            strong{text-decoration: underline;}
         }
 
-        #edit-field-data-value-wrapper{
-            width: 24%;
-            float: left;
-            padding: 0;
-           margin: 7px 14px 0 0;
+        .view-busca-festivais{
 
-            .form-item-field-data-value-value-date,
-            #edit-field-data-value-value,
-            #edit-field-data-value-value-datepicker-popup-1,
-            .form-type-date-popup{width: 100%;}
-        }  
+            .views-row{margin-bottom: 45px;}
 
-        .views-submit-button{
-            float: left;
-            width: 10%;            
+            h5{
+                height: 40px;
+                margin-bottom: 0;
 
-            button{
-                margin-top: 0;
-                padding: 8px 32px;
+                a{
+                    font-size: 18px;
+                    font-weight: normal;
+                }
+            }
+
+            .info-festival{
+                border-radius: 4px;
+                background: #fff;
+                min-height: 270px;
+                box-shadow: 0 0 20px #cacaca;
+                transition: all .2s;
+
+                &:hover{box-shadow: 0 0 2px #cacaca;}
+
+                .info{padding: 7px 15px 15px 15px;}
+            }
+
+            .pagination{
+                float: left;
+                width: 100%;
+                text-align: center;
+                margin-top: 25px;
+
+                a{color: $vermelho;}
+
+                li{display: inline-block;}
+
+                .active > span{
+                    background: $vermelho;
+                    border-color: $vermelho;
+                }
             }
         }
-    }*/
-
-    /*.views-widget-sort-sort_bef_combine{
-            padding: 10px;
-            float: left;
-            text-align: right;
-            background: #fff;
-            margin: 0 15px 25px 15px;
-            width: calc(100% - 30px);
-
-        .views-widget > div{display: block !important;}
-  
-        #edit-sort-bef-combine{float: right; width: 200px;}
-        label{
-            display: inline-block;
-            margin: 7px 7px 0 0;
-        }
-    }*/
+    }
     
-    .view-festivais{
-
-        .views-row{margin-bottom: 45px;}
-
-        h5{
-            height: 40px;
-            margin-bottom: 0;
-
-            a{
-                font-size: 18px;
-                font-weight: normal;
-            }
-        }
-
-        .info-festival{
-            border-radius: 4px;
-            background: #fff;
-            min-height: 270px;
-            box-shadow: 0 0 20px #cacaca;
-            transition: all .2s;
-
-            &:hover{box-shadow: 0 0 2px #cacaca;}
-
-            .info{padding: 7px 15px 15px 15px;}
-        }
-
-        .pagination{
-            float: left;
-            width: 100%;
-            text-align: center;
-            margin-top: 25px;
-
-            a{color: $vermelho;}
-
-            li{display: inline-block;}
-
-            .active > span{
-                background: $vermelho;
-                border-color: $vermelho;
-            }
-        }
-    }
 }
 
 
@@ -1285,84 +937,80 @@ header{
             font-weight: 600;
             font-size: 42px;
             letter-spacing: -1px;
-            margin: 25px 0 40px 0;
+            margin: 25px 0;
         }
 
-        /* filtro de posts */
-         .container-abas{
-           float: left;
-           width: 100%;
-         }
-         .abas.categoria{
-            margin: 0 0 -1px 0;
-            max-width: 100%;
-            padding: 0;
+        /*.info-mapa{
+            margin-top: -120px;
+            float: left;
+            width: 100%;
+        }*/
 
-            ul.nav-tabs{
-                margin-bottom: 0;
+        .view-festival-data{
+            margin-bottom: 25px;
+            width: 100%; 
+            float: left;       
 
-                li{
-                    margin-right: 2px;
+            a{
+                padding: 7px 15px;
+                font-weight: 600;
+                display: inline-block;
+            }
 
-                    a{
-                        float: left;
-                        width: 100%;
-                        height: 100%;
-                        padding-top: 22px;
-                        padding-right: 20px;
-                        padding-bottom: 22px;
-                        background-position: 14px 15px;
-                        background-repeat: no-repeat;
-                        border-radius: 0;
-                        margin-right: 0;
-                        border: none !important;
-                        font-weight: 400;
-                        transition: all .3s;
-                        display: block;
+            .views-row,
+            .views-field{float: left;}
 
-                        &:hover{
-                            background-position: 14px -105px;
-                            background-color: $vermelho;
-                            color: #fff;
-                        }
+            .views-row{width: 100%;}
 
-                    }
+            .views-field-field-data,
+            .views-field-city{
+                margin-right: 50px;
+                float: left;
+                padding: 13px 0 10px 30px;
+                
+            }
 
-                    @media(max-width:767px){
-                        width: 100%;
-                        text-align: center;
-                    }
+             .views-field-field-data{background: transparent url(../img/icon_calendar.png) left center no-repeat;}
+             .views-field-city{background: transparent url(../img/icon_place.png) 4px center no-repeat;}
+
+            .views-field-field-evento-facebook{
+                a.facebook{
+                    float: left;
+                    display: inline-block;                
+                    background: #2b4b92;
+                    color: #fff;
+                    border-radius: 3px;
+                    padding: 10px 15px;
+                    width: 100%;
+                    text-align: center;
+                }  
+            }
+
+            .ingressos{
+                float: left;
+                display: block;
+                width: 25%;
+                padding: 10px 15px;
+                text-align: center;
+                border-radius: 3px;
+                border: 2px solid $vermelho;
+
+                &:hover{
+                    color: #fff;
+                    background: $vermelho;
                 }
-                li.active {
-                    border-top: 1px solid $cinza-claro !important;
-                    border-right: 1px solid $cinza-claro !important;
-                    border-left: 1px solid $cinza-claro !important;
-                    border-bottom: 1px solid #fff !important;
+            }
 
-                    a{
-                        background-position: 14px 15px !important;
-                        background-color: #fff;
-                        color: $preto;
-                    }
-                }
+            @media(max-width:990px){
+                margin-top: 0;
             }
-            li.sobre a{
-                padding-left: 55px;
-                background-image: url(../img/icon_infofestival.png);
-            }
-            li.excursoes a{
-                padding-left: 65px;
-                background-image: url(../img/icon_excursoes.png);
-            }
-            li.venda-ingresso a{
-                padding-left: 55px;
-                background-image: url(../img/icon_vendaingresso.png);
-            }
-            li.procura-carona a{
-                padding-left: 65px;
-                background-image: url(../img/icon_procurandocarona.png);
-            }
-        }        
+        }  
+    }
+
+    .info-data{
+        margin-top: -1px;
+        float: left;
+        width: 100%;
     }
 
     .aviso{
@@ -1377,7 +1025,7 @@ header{
     .view-festival-sobre{
         float: left;
         width: 100%;
-        margin-bottom: 25px;
+        margin: 40px 0;
 
         h2{display: none;}
         
@@ -1396,6 +1044,11 @@ header{
             border: 2px solid $vermelho;
             color: $vermelho;
         }
+    }
+
+    .info-mapa{
+        float: left;
+        width: 100%;
     }
 
     h2{
@@ -1421,341 +1074,20 @@ header{
     }
 
     /* sidebar */
-    .info-mapa{
-        margin-top: -120px;
+
+    .banner-1{
+        margin-top: -130px;
         float: left;
         width: 100%;
-    }
-    .info-data{
-        margin-top: -1px;
-        float: left;
-        width: 100%;
-    }
-
-    .view-festival-data{
-        padding: 15px;
-        background: #fff;
-        border: 1px solid #eee;
-        float: left;
-        width: 100%;        
-
-        a{
-            padding: 7px 15px;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        .views-field-field-data,
-        .views-field-city{
-            width: 100%;
-            float: left;
-            padding: 13px 0 10px 30px;
-            border-bottom: 1px solid $cinza-claro;
-        }
-
-         .views-field-field-data{background: transparent url(../img/icon_calendar.png) left center no-repeat;}
-         .views-field-city{background: transparent url(../img/icon_place.png) 4px center no-repeat;}
-
-        .views-field-field-evento-facebook{
-            a.facebook{
-                float: left;
-                display: inline-block;                
-                background: #2b4b92;
-                color: #fff;
-                border-radius: 3px;
-                padding: 10px 15px;
-                margin: 20px 0;
-                width: 100%;
-                text-align: center;
-            }  
-        }
-
-        .ingressos{
-            float: left;
-            display: block;
-            width: 100%;
-            padding: 10px 15px;
-            text-align: center;
-            border-radius: 3px;
-            border: 2px solid $vermelho;
-
-            &:hover{
-                color: #fff;
-                background: $vermelho;
-            }
-        }
-
-        @media(max-width:990px){
-            margin-top: 0;
-        }
-    }
-
-
-    /*.view-display-id-attachment_1{margin: -80px 0 119px 0}
-    .view-display-id-block_1{padding-top: 0;}*/
-
-    
-    /* formularios de envio*/  
-    .tab-pane{
-        .card{
-            float: left;
-            width: 100%;
-            background: #f9f7f4;
-            border: none;
-        }
-        h3{
-            color: #fff;
-            margin-bottom: 5px;
-            padding: 0 25px 20px 0;
-            margin: 0;
-            text-align: left;            
-            font-size: 18px;
-            color: $preto;
-        }
-    }
-    .card.send-post{
-        border: 5px solid $vermelho;
-
-        h3{
-            font-size: 24px;
-            line-height: 36px;
-        }
-    }  
-    .container-form{
-        padding: 0;
-        margin: 0;        
-        border-radius: 2px;
-        text-align: left;
-
-        span.form-required{display: none;}
-
-        p{            
-            width: 100%;
-            display: inline-block;
-            margin: 0 25px 15px 25px;
-            font-weight: 400;            
-        }  
-
-        /* geral */   
-        #block-formblock-compra-ingressos,
-        #block-formblock-venda-ingressos,
-        #block-formblock-excursao,
-        #block-formblock-procura-carona,
-        #block-formblock-oferecendo-carona{
-            text-align: left;
-
-            label{font-weight: normal;}
-
-            .form-item{                
-                position: relative;
-                float: left;
-                width: 100%;
-                font-weight: normal;
-            }
-
-            .compact-form-label{z-index: 5;}
-  
-            fieldset.filter-wrapper,
-            .field-type-node-reference.field-name-field-evento,
-            .filter-wrapper.form-wrapper{display: none;}
-
-            .form-actions{
-                margin-top: 20px;
-                float: left;
-            }
-        }
-
-        /* excursoes */
-        #excursao-node-form{
-
-             .form-item-title{
-                float: left;
-                width: 48%;
-            }
-
-            .field-name-field-cidade2{
-                float: right;
-                width: 48%;   
-            }
-        }
-
-        /* venda de ingressos */
-        #venda-ingressos-node-form{
-            .field-name-field-valor{                 
-                input{
-                    float: right;
-                    margin-bottom: 15px;
-                    width: 94%;
-                }
-            }
-            .field-name-body{
-                label{display: none;}
-            }
-        }
-
-        /* oferecendo carona */
-        #oferecendo-carona-node-form{
-            .form-type-textarea{margin-top: 15px;}
-        }
-
-        /* procurando carona */
-        #procura-carona-node-form{
-            .form-type-textarea{margin-top: 15px;}
-        }
-    }
-    #publicacoes{
-        float: left;
-        width: 100%;
-
-        h2{margin-bottom: 40px;}
-    }
-
-     
-  .conteudo{ 
-    float: left;
-    width: 100%; 
-
-    .vertical-tabs{display: none;}
-    .view-filters{margin-bottom: 20px;}
-
-    .postagens{
-        .card{
-            transition: all .3s;
-            cursor: pointer;
-           
-            &:hover{
-                box-shadow: 0 0 15px #ccc;
-            }
-        }   
-
-        .tipo{            
-            border: 2px solid $vermelho;
-            color: $vermelho;
-            width: auto;
-            display: inline-block;
-            padding: 5px 10px;            
-            font-weight: bold;
-        }    
-    }
-
-    /* filtro de ordenacao de posts */
-    /*.views-widget-sort-by{
-        width: 100%;        
-
-        label{
-            display: inline-block;
-            float: left;
-            margin-right: 10px;
-            width: auto;
-        }
-        select{
-            float: left;
-            width: 30%;
-        }
-    }*/
-
-    /* posts e comentarios */
-    #comments{
-        margin-top: 25px;
-
-        .messages{display: none;}
-
-        .ajax-comments-form-reply{margin-bottom: 45px;}
-
-        .form-radios{display: none !important;}
-
-        .comment{
-            border-bottom: 1px solid #eaeaea;
-            background: #fafafa;
-        }
-        .field-name-comment-body{
-            font-weight: 400;
-            font-size: 16px;            
-        }
-        .comment-form fieldset{display: none;}
-
-        #comment-confirm-delete{
-            padding: 25px;
-
-            a{font-weight: normal;}
-        }
-
-        .form-textarea{height: 70px;}
-
-        .form-type-checkbox{font-size: 12px;}
-    }
-
-    .tab-content{
-        float: left;
-        margin-top: 20px;
-    }
-
-    .tab-content .views-row,
-    .view-publicacoes-recentes-festival2 .views-row{       
-        margin-bottom: 25px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid #ccc;
-
-        h2.title,
-        .form-item.form-type-item.form-group,
-        .filter-wrapper{display: none;}
-
-        .indented{margin-left: 25px;}
-
-        .views-field.views-field-ajax-comment .use-ajax-comments{
-            display: block;
-            width: 25%;
-            color: $vermelho;
-            border: 1px solid $vermelho;
-            text-align: center;
-            border-radius: 5px;
-            padding: 5px;
-            text-align: center;            
-            margin: 20px 0 0 17%;
-            transition: all .3s;
-
-            &:hover{
-                background: $vermelho;
-                color: #fff;
-            }
-        }
-
-        p.mensagem{            
-            font-weight: 400;
-            font-size: 18px;
-        }
-
-        p.acoes,
-        .links.list-inline{
-            text-align: right;
-            opacity: 0;
-            transition: all .3s;
-            margin-top: -15px;
-            a{
-                font-size: 11px;
-                text-transform: uppercase;
-                float: right;
-            }
-        }
-        .comment-form .form-type-textarea .control-label{display: none;}
-    }
-
-    .views-field-nothing:hover p.acoes,
-    .comment:hover .links.list-inline{opacity: 1;}
-
-    .view-empty{
-        /*width: 100%;
-        text-align: center;
-        padding: 25px;
-        font-style: italic;
         margin-bottom: 50px;
-        background: #eee;*/
-        display: none;
+    }
+
+    .banner-2{
+        float: left;
+        width: 100%;
     }
     
-  }
 
-  .extras{display: none;}
 
   .publicidade{
     img{
@@ -1764,35 +1096,7 @@ header{
     }
   }
 
-    .publicacoes-recentes{
-        float: left;
-        width: 100%;
-        margin-top: 50px;
-
-        .views-row{
-            background: #fff;
-            border-radius: 2px;
-            margin: 1%;
-            width: 31%;
-            padding: 2% 2% 0 2%;
-            box-shadow: 3px 3px 3px #eee;
-        }
-
-        h2{
-            text-align: center;
-            margin: 50px 0;
-        }
-        .row{
-            min-height: 150px;
-
-            .chamada{font-style: italic;}
-            .nome{font-weight: bold;}
-        }
-    }
-
-    .view-publicacoes-recentes-festival2{
-        .views-exposed-widget{width: 50%;}
-    }
+    
 
   .proximos-festivais{
     margin-top: 50px;
@@ -2875,7 +2179,7 @@ body.page-legal-accept{
 
      .cadastro-festival{
         background: #f5f5f5;
-        padding: 20px 0;
+        padding: 50px 0;
         width: 100%;
         float: left;
 
