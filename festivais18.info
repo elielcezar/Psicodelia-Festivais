@@ -1,0 +1,21 @@
+
+name = festivais18
+description = Tema para o Psicodelia Festivais
+package = Core
+version = VERSION
+core = 7.x
+
+base theme = bootstrap
+
+stylesheets[all][] = css/geral.css
+stylesheets[all][] = css/max-767.css
+
+
+regions[header] = Header
+regions[extras] = Extras
+regions[content] = Content
+regions[footer] = Footer
+
+version = "7.12"
+project = "drupal"
+datestamp = "1328134560"
