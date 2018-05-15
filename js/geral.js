@@ -5,13 +5,13 @@
       $('#block-system-user-menu').appendTo('.menu-usuario');
 
       /* menu hamburguer*/
-      $('.c-hamburger').mouseenter(function(){
+      /*$('.c-hamburger').mouseenter(function(){
           $(this).addClass('is-active');
           $('header ul.menu').addClass('is-active');
       }).mouseleave(function(){
           $(this).removeClass('is-active');
           $('header ul.menu').removeClass('is-active');
-      });
+      });*/
       $('header .btn-group').mouseenter(function(){
           $(this).addClass('open');
       }).mouseleave(function(){
@@ -67,6 +67,20 @@
           });*/
           /* ajuste na tela de vendas por usuario */
           //$('.page-minhas-vendas .conteudo table').addClass('table table-hover table-striped')
+
+
+          /* cadastro de usuario */
+          $('.page-user-register #edit-profile-main-field-nome').prependTo('.form-item-mail');
+
+
+
+        /* reordena os campos de perfil de usuario */
+        $('.page-user-me-edit .conteudo').prepend('<h1>Seus Dados</h1>');
+        $('.page-user-me-edit #profile-main-field-nome-add-more-wrapper').prependTo('.form-item-mail');
+
+        //$('.page-user-me-edit #edit-account').prependTo('.field-name-field-termos-e-condicoes');
+        //$('.page-user-me-edit #edit-fboauth').appendTo('.form-type-password-confirm');
+        //$('.page-user-me-edit #edit-comment-notify-settings').hide();
       
    			
     });

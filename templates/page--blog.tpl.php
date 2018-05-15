@@ -7,7 +7,7 @@
             <h1><?php print $title; ?></h1>
         </div>
           
-             <?php // if (!empty($breadcrumb)): print $breadcrumb; endif; ?> 
+           
         <div class="shortcuts">
             <?php print $messages; ?>
             <?php if (!empty($tabs)): ?>

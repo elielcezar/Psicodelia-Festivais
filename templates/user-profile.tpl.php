@@ -1,9 +1,18 @@
 
+
+<?php 
+
+if($user->uid){ 
+  header("location:https://psicodelia.org/festivais/user/me/edit");
+}
+
+?>
+
 <?php 
 //$uid = $GLOBALS['user']->uid; 
 ?>
 
- <div class="header header-filter">
+ <!--div class="header header-filter">
         <div class="container">
             <div class="row">              
              <div class="capa">
@@ -11,7 +20,7 @@
           </div>
             </div>
         </div>
-    </div>
+    </div-->
 
 
 <div id="principal">

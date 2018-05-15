@@ -23,16 +23,10 @@
   <?php endif; ?>
  
     
-    <?php print $styles; ?>
-
-    <!-- slick carousel -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-    
+    <?php print $styles; ?>    
     <?php print $scripts; ?>  
-    <!-- Custom Fonts -->
-  
+    <!-- Custom Fonts -->  
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
-
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,8 +36,6 @@
     <![endif]-->
     <link rel="shortcut icon" href="<?php print base_path() . path_to_theme() .'/' ?>img/favicon.png">
     <script src="https://use.fontawesome.com/e3b6fded0c.js"></script>
-
-
         
 
 </head>
@@ -70,14 +62,6 @@
 <?php print $page; ?>
 <?php print $page_bottom; ?>
 </div>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PDXX26"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PDXX26');</script>
-<!-- End Google Tag Manager -->
+
 </body>
 </html>

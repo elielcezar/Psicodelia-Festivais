@@ -37,6 +37,8 @@
 					<div class="tab-content">
 
 						<div class="tab-pane active" id="sobre">
+
+							<?php if($user->uid){ ?>
 				      			<div class="container-form">
 				      				<?php print views_embed_view('festival_sobre', 'default', $nid); ?>
 				      			</div>			      				
@@ -44,7 +46,9 @@
 				      			<div class="info-mapa">
 									<?php print views_embed_view('festival_data', 'attachment_1', $nid); ?>	
 								</div>
-								
+							<?php } else { ?>
+									<div class="aviso"><h4><a href="<?php print base_path() ?>user/register" target="_blank">Crie uma conta</a> ou <a href="<?php print base_path() ?>user" target="_blank">faça login</a> para ver todas as informações desse festival.<br/><br/>É rápido e o melhor, de graça! =)</h4></div>
+							<?php } ?>					
 					      </div>
 
 					</div>
@@ -67,18 +71,9 @@
 				</script>
 			</div>
 
-			<div class="banner-2">
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- Festivais Sidebar 2 -->
-					<ins class="adsbygoogle"
-					     style="display:block"
-					     data-ad-client="ca-pub-7864415239368120"
-					     data-ad-slot="4465967667"
-					     data-ad-format="auto"></ins>
-					<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-			</div>
+			<!--div class="banner-2">
+				
+			</div-->
 			
 		</div>
 
@@ -112,16 +107,16 @@ jQuery(document).ready(function ($) {
       });  	
 
     /* seleciona o evento no form de resposta */
-    var node_nid = Drupal.settings.nid;
-    $(".form-item-field-evento-und select").val(node_nid);
+    /*var node_nid = Drupal.settings.nid;
+    $(".form-item-field-evento-und select").val(node_nid);*/
 
     /* posiciona os forms nas abas */
-    $('.shortcuts').prependTo('.top-content .container');
+    /*$('.shortcuts').prependTo('.top-content .container');
     $('#block-formblock-compra-ingressos').appendTo('.form-compra');
     $('#block-formblock-venda-ingressos').appendTo('.form-venda');
     $('#block-formblock-excursao').appendTo('.form-excursoes');
     $('#block-formblock-procura-carona').appendTo('.form-procura-carona');
-    $('#block-formblock-oferecendo-carona').appendTo('.form-oferece-carona');
+    $('#block-formblock-oferecendo-carona').appendTo('.form-oferece-carona');*/
 
 
     /*ajuste na area sobr o evento */
